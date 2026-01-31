@@ -2,8 +2,21 @@
 
 ### _for Flipper Zero_
 
+## **⚠️ Warning: Important Security & Project Update**
+Read message by following link below:
+
+https://protopirate.net/ProtoPirate
+
+Main repo is located at: https://protopirate.net/ProtoPirate/ProtoPirate 
+
+All others are read only mirrors!
+
+
 ProtoPirate is an experimental rolling-code analysis toolkit developed by members of **The Pirates' Plunder**.
-The app currently supports decoding for multiple automotive key-fob families (Kia, Ford, Subaru, Suzuki, VW, and more), with the goal of being a drop-in Flipper app (.fap) that is free, open source, and can be used on any Flipper Zero firmware.
+
+The app currently supports decoding for multiple automotive key-fob families (Kia, Ford, Subaru, Suzuki, VW, and more), with the goal of being a drop-in Flipper app (.fap) that is free, open source, and can be used on any Flipper Zero firmware. 
+
+App is intended for educational and security purposes only, and has no signal transmission enabled by default. This prevents users from accidentally desyncing their keyfobs, making it safe for non-specialists.
 
 ## **Supported Protocols**
 
