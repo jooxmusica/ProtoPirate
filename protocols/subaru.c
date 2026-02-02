@@ -10,11 +10,11 @@ static const SubGhzBlockConst subghz_protocol_subaru_const = {
     .min_count_bit_for_found = 64,
 };
 
-#define SUBARU_PREAMBLE_PAIRS  80
-#define SUBARU_GAP_US          2800
-#define SUBARU_SYNC_US         2800
-#define SUBARU_TOTAL_BURSTS    3
-#define SUBARU_INTER_BURST_GAP 25000
+#define SUBARU_PREAMBLE_PAIRS   80
+#define SUBARU_GAP_US           2800
+#define SUBARU_SYNC_US          2800
+#define SUBARU_TOTAL_BURSTS     3
+#define SUBARU_INTER_BURST_GAP  25000
 
 typedef struct SubGhzProtocolDecoderSubaru {
     SubGhzProtocolDecoderBase base;
@@ -357,12 +357,8 @@ SubGhzProtocolStatus
         subghz_protocol_encoder_subaru_get_upload(instance);
         instance->encoder.is_running = true;
 
-        FURI_LOG_I(
-            TAG,
-            "Encoder ready: key=0x%016llX, serial=0x%06lX, btn=0x%X",
-            instance->key,
-            instance->serial,
-            instance->btn);
+        FURI_LOG_I(TAG, "Encoder ready: key=0x%016llX, serial=0x%06lX, btn=0x%X",
+            instance->key, instance->serial, instance->btn);
 
         ret = SubGhzProtocolStatusOk;
     } while(false);
@@ -567,11 +563,9 @@ SubGhzProtocolStatus subghz_protocol_decoder_subaru_serialize(
     do {
         if(!flipper_format_write_uint32(flipper_format, "Frequency", &preset->frequency, 1)) break;
         if(!flipper_format_write_string_cstr(
-               flipper_format, "Preset", furi_string_get_cstr(preset->name)))
-            break;
+               flipper_format, "Preset", furi_string_get_cstr(preset->name))) break;
         if(!flipper_format_write_string_cstr(
-               flipper_format, "Protocol", instance->generic.protocol_name))
-            break;
+               flipper_format, "Protocol", instance->generic.protocol_name)) break;
 
         uint32_t bits = 64;
         if(!flipper_format_write_uint32(flipper_format, "Bit", &bits, 1)) break;
